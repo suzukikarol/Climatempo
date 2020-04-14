@@ -36,3 +36,5 @@ https://www.behance.net/gallery/94990729/Weather-app-Weathere?tracking_source=se
 API de consulta:
 
 https://www.weatherbit.io/api/weather-current
+
+..
