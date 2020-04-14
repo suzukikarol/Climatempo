@@ -1,5 +1,5 @@
-<form >
-    <input type="search" class="inputSearch" placeholder="Como está o tempo em...">
-    <button></button>
-</form>
-
+    <div class="buscar">
+        <input type="search" class="inputSearch" (keyup)="buscaValor($event)">
+        <button (click)= mostraValor()></button>
+    </div>
+    

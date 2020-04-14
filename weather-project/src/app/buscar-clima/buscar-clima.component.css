@@ -20,6 +20,7 @@ button{
     border-radius: 10px;
     border-style: none;
     margin-left: 10px;
+    
 }
 
 button:hover{
@@ -29,7 +30,7 @@ button:hover{
     cursor: pointer;
 }
 
-form{
+.buscar{
     display:flex;
     align-items: center;
 }

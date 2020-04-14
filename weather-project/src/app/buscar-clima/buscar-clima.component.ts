@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BuscarClimaComponent implements OnInit {
 
+  cidade: any;
+
+  mostrarInput: any;
+  valor: any;
+  busca: any
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  buscaValor(event) {
+    this.busca = event.target.value
+  }
+
+  mostraValor() {
+    console.log(this.busca)
   }
 
 }
