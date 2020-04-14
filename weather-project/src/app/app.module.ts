@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MostraTempoComponent } from './mostra-tempo/mostra-tempo.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MostraTempoComponent
   ],
   imports: [
     BrowserModule,
