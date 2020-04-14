@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MostraTempoComponent } from './mostra-tempo/mostra-tempo.component';
+import { BuscarClimaComponent } from './buscar-clima/buscar-clima.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MostraTempoComponent
+    MostraTempoComponent,
+    BuscarClimaComponent
   ],
   imports: [
     BrowserModule,
