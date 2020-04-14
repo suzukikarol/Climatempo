@@ -1,0 +1,20 @@
+.climashare{
+    display: flex;
+    flex-direction: column;
+    letter-spacing: .3px;
+}
+
+.title{
+    color: #707070;
+}
+
+.city{
+    color: #0080cd;
+    font-size: 22px;
+}
+
+.graus{
+    font-size: 67px;
+    color: #707070;
+    font-weight: 700;
+}
