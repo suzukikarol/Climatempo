@@ -1,23 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ServiceApiService } from "../service-api.service";
 
 @Component({
   selector: 'app-buscar-clima',
   templateUrl: './buscar-clima.component.html',
-  styleUrls: ['./buscar-clima.component.css']
+  styleUrls: ['./buscar-clima.component.css'],
+  template: `city : {{city}}`
 })
 export class BuscarClimaComponent implements OnInit {
 
-  estado="sao paulo";
-  mostrarInput: any;
-  tempo:any;
-  busca: any;
+  estado="bahia";
+  retorno:any;
+  @Input() city:any;
 
   constructor(private myservice: ServiceApiService) { }
 
   ngOnInit() {
     this.myservice.getData(this.estado).subscribe((data) => {
-      this.tempo =  Object.create(data).data[0]; 
+      this.retorno =  Object.create(data).data[0]; 
           
     })
  };
@@ -27,7 +27,9 @@ export class BuscarClimaComponent implements OnInit {
   // }
 
    mostraValor() {
-     console.log(this.tempo)
+     this.city = this.retorno.city_name;
+     console.log(this.retorno);
+     console.log(this.city);  
   }
 
 }

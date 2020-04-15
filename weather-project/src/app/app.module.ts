@@ -16,7 +16,7 @@ import { ServiceApiService } from "./service-api.service";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
+    HttpClientModule, 
   ],
   providers: [ServiceApiService],
   bootstrap: [AppComponent]
