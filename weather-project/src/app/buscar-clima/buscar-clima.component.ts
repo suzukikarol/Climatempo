@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ServiceApiService } from "../service-api.service";
+import { ModelResponse } from './model.response';
+
 
 @Component({
   selector: 'app-buscar-clima',
@@ -9,16 +11,20 @@ import { ServiceApiService } from "../service-api.service";
 })
 export class BuscarClimaComponent implements OnInit {
 
+  public model:ModelResponse;
   estado="bahia";
   retorno:any;
-  @Input() city:any;
+  value:any;
+  city:any; 
 
   constructor(private myservice: ServiceApiService) { }
 
   ngOnInit() {
     this.myservice.getData(this.estado).subscribe((data) => {
-      this.retorno =  Object.create(data).data[0]; 
-          
+      this.model =  Object.create(data).data[0];
+      this.retorno = this.model
+      console.log(this.model)
+      
     })
  };
 
@@ -26,8 +32,10 @@ export class BuscarClimaComponent implements OnInit {
   //   this.estado = event.target.value
   // }
 
+
    mostraValor() {
-     this.city = this.retorno.city_name;
+    
+     this.city = this.retorno;
      console.log(this.retorno);
      console.log(this.city);  
   }

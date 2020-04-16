@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { ServiceApiService } from '../service-api.service';
+import { ModelResponse } from '../buscar-clima/model.response';
+
 @Component({
   selector: 'app-mostra-tempo',
   templateUrl: './mostra-tempo.component.html',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MostraTempoComponent implements OnInit {
 
-  constructor() { }
+ 
 
-  ngOnInit(): void {
+  constructor(private service:ServiceApiService) { }
+
+  ngOnInit(): any {
+    
   }
 
 }
