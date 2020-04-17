@@ -10,12 +10,50 @@ import { ModelResponse } from '../buscar-clima/model.response';
 })
 export class MostraTempoComponent implements OnInit {
 
- 
+  public model: ModelResponse;
 
-  constructor(private service:ServiceApiService) { }
+  city:string = 'São paulo';
+  valor_input: any;
+
+  icon:any;
+  cidade: any
+  temperatura: any
+  umidade: any
+  velocidade: any
+  sensacao: any
+
+  constructor(private service: ServiceApiService) { }
 
   ngOnInit(): any {
-    
+      this.mostraValor();
   }
 
+  getValue(event){
+    this.city = event.target.value;
+  }
+
+  callApi(valor:string) {
+    let dataWeather;
+    this.service.getData(valor).subscribe((data) => {
+      dataWeather = data;
+      this.model = dataWeather.data[0]
+      this.icon = dataWeather.data[0];
+      
+      this.cidade = this.model.city_name;
+      this.temperatura = this.model.temp;
+      this.umidade = this.model.rh;
+      this.velocidade = this.model.wind_spd;
+      this.sensacao = this.model.app_temp;
+      
+
+      // this.model =  Object.create(data).data[0];
+      // this.retorno = this.model
+      // console.log(this.model)
+
+    })
+  }
+         mostraValor() {
+                 this.callApi(this.city);
+
+}
 }

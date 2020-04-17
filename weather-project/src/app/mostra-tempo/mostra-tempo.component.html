@@ -1,41 +1,47 @@
 
+<div class="buscar">
+    <input type="search" name="value" class="inputSearch" placeholder="Digite o nome da cidade..." (change)="getValue($event)" >
+    <button (click)= mostraValor()></button>
+    
+</div>
+
+
 <div class="climashare">
 
     <div class="left">
         <h2 class="title">Tempo agora em</h2> 
-        <h2 class="city">São Paulo</h2>
+        <h2 class="city">{{cidade}}</h2>
     </div>
 
     <div class="row">
-        <img src="./assets/icon/dom.svg">
+        <img src="https://www.weatherbit.io/static/img/icons/{{icon.weather.icon}}.png">
         <div class="row2">
-            <p class="graus">22º</p>
-            <p class="legend1">Nuvens esparsas</p>
+            <p class="graus">{{temperatura}}º</p>
         </div>
     </div>
     
     <div class="column">
         <div class="row2">
-            <h3>Sensação</h3>
-            <p>22º</p>
+            <h3>Sensação</h3>  
+            <p>{{sensacao}}º</p>
         </div>
         
         <div class="row2">
-            <h3>Sensação</h3>
-            <p>69%</p>
+            <h3>umidade</h3>
+            <p>{{umidade}}%</p>
         </div>
         
-        <div class="row2">
-            <h3>Pressão</h3>
+        <!-- <div class="row2">
+            <h3></h3>
             <p>919 hPa</p>
-        </div>
+        </div> -->
 
         <div class="row2">
             <h3>Vento</h3>
-            <p>6 km/h</p>
+            <p>{{velocidade}}km/h</p>
         </div>
 
     </div>
 
-    <p>Atualizado em horas</p>
+   
 </div>
